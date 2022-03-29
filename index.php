@@ -16,10 +16,12 @@ if ($_POST) {
 
 }
 ?>
+<p>Задание №5.1</p>
 <form method="post">
     <input name="firstCoor" checked>Введите первую координату<br>
     <input name="secondCoor" checked>Введите вторую координату<br>
     <input type="submit" value="Отправить">
 </form>
+<a href="prac_lab№5.2.php">Задание 5.2</a>
 </body>
 </html>
