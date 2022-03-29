@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <title>HTML-форма с флажками</title>
+    <title>htrher</title>
     <meta charset='utf-8'>
 </head>
 <body>
@@ -21,7 +21,7 @@ $file = file('list.txt');
                 }
             }
         }
-        $file = file('list.txt'); // Прочитать измененный файл
+        $file = file('list.txt');
         foreach($file as $key => $value) {
             echo "<input type='checkbox' name='item".$key."' value={$key}>{$value}<br/>";
         }
