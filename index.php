@@ -22,6 +22,7 @@ if ($_POST) {
     <input name="secondCoor" checked>Введите вторую координату<br>
     <input type="submit" value="Отправить">
 </form>
-<a href="prac_lab№5.2.php">Задание 5.2</a>
+<a href="prac_lab№5.2.php">Задание 5.2</a><br>
+<a href="prac_lab№5.3.php">Задание 5.3</a>
 </body>
 </html>
