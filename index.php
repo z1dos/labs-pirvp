@@ -25,5 +25,6 @@ if ($_POST) {
 <a href="prac_lab№5.2.php">Задание 5.2</a><br>
 <a href="prac_lab№5.3.php">Задание 5.3</a><br>
 <a href="prac_6/prac_lab_6_1.php">Задание 6.1</a><br>
+<a href="prac_6/prac_lab_6_4.php">Задание 6.4</a><br>
 </body>
 </html>
