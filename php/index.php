@@ -21,7 +21,7 @@ function getArrX($n, $x)
 
 for ($i = 0; $i <= $n; $i++) {
     $x[$i] = rand(1, 100);
-    $y[$i] = $x[$i];
+    $y[$i] = decbin($x[$i]);
     if ($y[$i] % 2) unset($y[$i]);
 }
 
