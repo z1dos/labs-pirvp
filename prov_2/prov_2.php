@@ -29,10 +29,10 @@ for ($i = 0; $i <= $n; $i++) {
     if (!isPrime($y[$i])) unset($y[$i]);
 }
 
-function FinalMaxInY($y, $max)
+function FinalMaxInY($y)
 {
-    foreach ($y as $i) if ($max < $i) $max = $i;
-    echo('<br>' . '<pre>' . 'Максимальное значене в y:' . $max . '</pre>');
+    $maxValue = max($y);
+    echo('<br>' . '<pre>' . 'Максимальное значене в y:' . $maxValue . '</pre>');
 }
 
 echo('<br>');
@@ -40,7 +40,7 @@ echo('<pre>' . 'Массив х:');
 print_r($x);
 echo('</pre>');
 
-FinalMaxInY($y, $max);
+FinalMaxInY($y);
 
 echo('<br>');
 echo('<pre>' . 'Массив y:');
