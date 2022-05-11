@@ -8,8 +8,12 @@ function trim_array($item)
 
 $file = array_map('trim_array', $file);
 if (in_array($ip, $file)) {
-    $count = 0;
-    $cou = file_put_contents('users.txt', $count++ . PHP_EOL, FILE_APPEND);
-    return $cou;
+    $file = file("users.txt");
+    $count = implode("", $file);
+    $count++;
+    $myfile = fopen("users.txt","w");
+    fputs($myfile,$count);
+    fclose($myfile);
 } else file_put_contents('users.txt', $ip . PHP_EOL, FILE_APPEND);
+
 

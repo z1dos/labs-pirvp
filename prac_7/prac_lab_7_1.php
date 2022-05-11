@@ -30,6 +30,7 @@ if (empty($email)) {
 
 if (preg_match_all("/^([А-ЯЁ]{1}[а-яё]*)$/u", $name)) {
     if (preg_match_all("/^([А-ЯЁ]{1}[а-яё]*)$/u", $surname)) {
+<<<<<<< HEAD
         $result = "$name||$surname||$email";
         $match = null;
         $fp = fopen("users.txt", "r+");
@@ -54,6 +55,35 @@ if (preg_match_all("/^([А-ЯЁ]{1}[а-яё]*)$/u", $name)) {
                 'Ваша фамилия: ' . $surname . '<br>' .
                 'Ваша почта: ' . $email . '<br>';
         }
+=======
+        if(preg_match_all("/[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}/", $email)){
+            $filename = 'users.txt';
+
+            $getContent = file_get_contents($filename);
+            $getContent .= 'Имя:' . $name . ' ' . 'Фамилия:' . $surname . ' ' . 'Электронная почта:' . $email . "\n";
+            file_put_contents($filename, $getContent);
+
+
+            $result = "$name||$surname||$email";
+            $match = null;
+            $fp = fopen("users.txt", "r+");
+            while (($line = stream_get_line($fp, 1024 * 1024, "\n")) !== false) {
+                if(trim($line) === trim($result)) {
+                    $match = trim($line);
+                    break;
+                }
+            }
+            fclose($fp);
+            if(!empty($match)) {
+                echo "Найдено совпадение - {$match}";
+            } else {
+                echo 'Вы зарегестрированы' . '<br>' .
+                    'Ваше имя: ' . $name . '<br>' .
+                    'Ваша фамилия: ' . $surname . '<br>' .
+                    'Ваша почта: ' . $email . '<br>';
+            }
+        } else echo 'Email введен неправильно';
+>>>>>>> 4e9599af3e7cceb724327597fbb5460cdcd19c97
     } else echo 'Фамилия должна начинаться с большой буквы и должно соделрать от 2 до 20 символов';
 } else echo 'Имя должно начинаться с большой буквы и должно соделрать от 2 до 20 символов';
 
