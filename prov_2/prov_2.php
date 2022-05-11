@@ -32,11 +32,6 @@ for ($i = 0; $i <= $n; $i++) {
 function FinalMaxInY($y, $max)
 {
     foreach ($y as $i) if ($max < $i) $max = $i;
-    viewMaxAfterDelete($max);
-}
-
-function viewMaxAfterDelete($max)
-{
     echo('<br>' . '<pre>' . 'Максимальное значене в y:' . $max . '</pre>');
 }
 
