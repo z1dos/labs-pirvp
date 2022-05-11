@@ -30,13 +30,6 @@ if (empty($email)) {
 
 if (preg_match_all("/^([А-ЯЁ]{1}[а-яё]*)$/u", $name)) {
     if (preg_match_all("/^([А-ЯЁ]{1}[а-яё]*)$/u", $surname)) {
-        $filename = 'users.txt';
-
-        $getContent = file_get_contents($filename);
-        $getContent .= 'Имя:' . $name . ' ' . 'Фамилия:' . $surname . ' ' . 'Электронная почта:' . $email . "\n";
-        file_put_contents($filename, $getContent);
-
-
         $result = "$name||$surname||$email";
         $match = null;
         $fp = fopen("users.txt", "r+");
@@ -50,6 +43,12 @@ if (preg_match_all("/^([А-ЯЁ]{1}[а-яё]*)$/u", $name)) {
         if(!empty($match)) {
             echo "Найдено совпадение - {$match}";
         } else {
+            $filename = 'users.txt';
+
+            $getContent = file_get_contents($filename);
+            $getContent .= 'Имя:' . $name . 'Фамилия:' . $surname . 'Электронная почта:' . $email . "\n";
+
+            file_put_contents($filename, $getContent);
             echo 'Вы зарегестрированы' . '<br>' .
                 'Ваше имя: ' . $name . '<br>' .
                 'Ваша фамилия: ' . $surname . '<br>' .
