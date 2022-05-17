@@ -2,10 +2,9 @@
 
 $x = array();
 $y = array();
-$n = rand(25, 100);
+$n = rand(1, 100);
 $times = 0;
 $max = 0;
-$newMax = 0;
 
 function isPrime($n)
 {
@@ -29,10 +28,24 @@ for ($i = 0; $i <= $n; $i++) {
     if (!isPrime($y[$i])) unset($y[$i]);
 }
 
+arsort($y);
+$y = array_slice($y, 5);
+
 function FinalMaxInY($y)
 {
     $maxValue = max($y);
     echo('<br>' . '<pre>' . 'Максимальное значене в y:' . $maxValue . '</pre>');
+}
+
+function decY($y)
+{
+    for ($i = 0; $i <= $y[$i]; $i++) {
+        $y[$i] = decbin($i);
+    }
+    echo('<br>');
+    echo('<pre>' . 'Массив y в двоичной системе:');
+    print_r($y);
+    echo('</pre>');
 }
 
 echo('<br>');
@@ -46,3 +59,5 @@ echo('<br>');
 echo('<pre>' . 'Массив y:');
 print_r($y);
 echo('</pre>');
+
+decY($y);
