@@ -40,7 +40,7 @@ function FinalMaxInY($y)
 function decY($y)
 {
     for ($i = 0; $i <= $y[$i]; $i++) {
-        $y[$i] = decbin($i);
+        $y[$i] = decbin($y[$i]);
     }
     echo('<br>');
     echo('<pre>' . 'Массив y в двоичной системе:');
