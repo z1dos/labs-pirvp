@@ -20,9 +20,7 @@
 
     $title = $_GET['title'];
 
-    $sql = "SELECT * FROM `list` WHERE `title` = ?";
-    $query = $pdo->prepare($sql);
-    $query = $pdo->query("SELECT * FROM `list` WHERE `title` = '$title' AND `done` = 'no' ");
+    $query = $pdo->query("SELECT * FROM `list` WHERE `title` = '$title' AND `done` = 'no' ORDER BY `id` DESC");
 
     while ($row = $query->fetch(PDO::FETCH_OBJ)) {
         echo '<div><li>' . $row->title . ' <a href="delete.php?id=' . $row->id . '">X</a></li>' . '<a href="done.php?id=' . $row->id . '">Выполенено</a>' . ' </div>';
@@ -36,9 +34,7 @@
 
     $title = $_GET['title'];
 
-    $sql = "SELECT * FROM `list` WHERE `title` = ?";
-    $query = $pdo->prepare($sql);
-    $query = $pdo->query("SELECT * FROM `list` WHERE `title` = '$title' AND `done` = 'done' ");
+    $query = $pdo->query("SELECT * FROM `list` WHERE `title` = '$title' AND `done` = 'done' ORDER BY `id` DESC ");
 
     while ($row = $query->fetch(PDO::FETCH_OBJ)) {
         echo '<div><li>' . $row->title . ' <a href="delete.php?id=' . $row->id . '">X</a></li>' . ' </div>';
